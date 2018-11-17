@@ -19,19 +19,19 @@ Ele mantém as funcionalidades disponíveis na interface de usuário, \citeAutho
 \citeAuthorPageYear{kettle} diz que permitir que qualquer pessoa veja o que está acontecendo nas várias partes de um processo de ETL é crucial, permite acelerar o desenvolvimento e reduzir o custo. Fluxo de dados flexível, o \pdi foi criado para ser o mais flexível possível, respeitando os fluxos que podem ser criados \citep{kettle}. Apenas mapear dados impactados, \citeAuthorPageYear{kettle} diz que um dos princípios fundamentais do Kettle é todos os campos que não são mapeados passam automaticamente para o próximo passo do processo, reduzindo assim o custo de manutenção.
 
 \subsubsection{Processo}
-Ao abrir o \pdi, ele apresenta a página inicial, como mostra na figura \ref{fig:initialpdi}. Dessa tela é possível criar \textit{Jobs} e \textit{Transformations}, que serão explicados mais pra frente. 
+Ao abrir o \pdi, ele apresenta a página inicial, como mostra na figura \ref{initialpdi}. Dessa tela é possível criar \textit{Jobs} e \textit{Transformations}, que serão explicados mais pra frente. 
 \begin{figure}[H]
 \centering
 \includegraphics[height=5cm]{imagens/pagina_principal_pentaho.png}
 \caption{Página inicial do \pdi}
-\label{fig:initialpdi}
+\label{initialpdi}
 \end{figure}
-O \pdi utiliza \textit{transformations} que pode contém uma série de \textit{steps} e \textit{jobs} para realizar o processo de ETL. A imagem \ref{fig:transformationOptions} mostra algumas das opções para criação de transformations.
+O \pdi utiliza \textit{transformations} que pode contém uma série de \textit{steps} e \textit{jobs} para realizar o processo de ETL. A figura \ref{transformationOptions} mostra algumas das opções para criação de transformations.
 \begin{figure}[H]
 \centering
 \includegraphics[width=4cm, height=8cm]{imagens/opcoes_de_transformacao.png}
 \caption{Opções de transformações}
-\label{fig:transformationOptions}
+\label{transformationOptions}
 
 \end{figure}
 Transformation, segundo \citeauthor{kettle} (\citeyear{kettle}), consiste em um ou mais \textit{steps} que realiza a leitura de arquivos, filtrar linhas, limpeza dos dados e carregamento dos dados em uma base de dados. Os steps são conectados por \textit{hops}, que são caminhos de um único sentido por onde os dados trafegam. 
@@ -39,10 +39,10 @@ Transformation, segundo \citeauthor{kettle} (\citeyear{kettle}), consiste em um 
 \centering
 \includegraphics[height=5cm]{imagens/transformation.png}
 \caption{Transformation (\citeauthor{kettle} \citeyear{kettle})}
-\label{fig:transformation}
+\label{transformation}
 \end{figure}
 
-A figura \ref{fig:transformation} mostra um pequeno exemplo pequeno de uma \textit{transformation} no \pdi.
+A figura \ref{transformation} mostra um pequeno exemplo pequeno de uma \textit{transformation} no \pdi.
 
 Um \textit{step} é representado graficamente por um bloco, eles precisam ter um nome único. \citeAuthorPageYear{kettle} diz que um step é capaz de ler e de escrever linhas de dados. Os steps escrevem dados nos \textit{outcoming hops}, que são conectados a um ou mais steps no final do hop, esse hop é chamado de \textit{incomming hop} os dados são lidos nos incoming hops. Além disso, um cada step tem uma capacidade diferente, como a figura acima mostra, que o o primeiro irá receber dados de uma tabela e o segundo irá escrever os dados em um arquivo.
 
@@ -291,13 +291,13 @@ Além disso, todas essas opções podem ser acessadas através de uma interface 
 A interface gráfica principal do WEKA é a Explorer. Diversas operações podem ser feitas nessa interface.
 
 \subsubsection{Carregando os dados}
-Ao abrir o WEKA, deve se selecionar a opção explorer, como mostra na imagem a seguir:
+Ao abrir o WEKA, deve se selecionar a opção explorer, como mostra na figura \ref{explorer}:
 
 \begin{figure}[H]
 \centering
 \includegraphics[height=5cm]{imagens/wekaprincipal.png}
 \caption{Interface principal do WEKA}
-\label{figura18}
+\label{explorer}
 \end{figure}
 
 Ao abrir o explorer, a tela deverá exibir diversas opções para carregamento de dados. O formato principal do WEKA é o ARFF, porém ele também é capaz de ler outros formatos, como csv.
@@ -309,29 +309,29 @@ Ao abrir o explorer, a tela deverá exibir diversas opções para carregamento d
 \label{figura19}
 \end{figure}
 
-Ao carregar os dados, informações sobre cada um dos atributos pode ser encontrada no canto inferior direito e todos os atributos estarão listados no canto esquerdo, como mostra a figura 20. A figura 21 mostra que é possível obter uma distribuição dos valores de cada um dos atributos disponíveis.
+Ao carregar os dados, informações sobre cada um dos atributos pode ser encontrada no canto inferior direito e todos os atributos estarão listados no canto esquerdo, como mostra a figura \ref{loadeddata}. A figura \ref{distribuicao} mostra que é possível obter uma distribuição dos valores de cada um dos atributos disponíveis.
 
 \begin{figure}[H]
 \centering
 \includegraphics[height=7cm]{imagens/wekapreprocessingfull.png}
 \caption{Dados carregados}
-\label{figura20}
+\label{loadeddata}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[height=7cm]{imagens/wekadistribuition.png}
 \caption{Distribuição dos valores dos dados}
-\label{figura21}
+\label{distribuicao}
 \end{figure}
 
-Com o WEKA, é possível criar modelos de classificação e de clusterização, nesse caso, foi utilizado o de classificação, como mostra a imagem 22. 
+Com o WEKA, é possível criar modelos de classificação e de clusterização, nesse caso, foi utilizado o de classificação, como mostra a figura \ref{classificationinterface}. 
 
 \begin{figure}[H]
 \centering
 \includegraphics[height=7cm]{imagens/weka.png}
 \caption{Interface de classificação}
-\label{figura22}
+\label{classificationinterface}
 \end{figure}
 
 Ao selecionar um algoritmo de classificação, o campo da direita irá mostrar um log do modelo, junto com o resultado encontrado.
