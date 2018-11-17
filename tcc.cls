@@ -79,7 +79,7 @@
                        {-0.5em \@plus -0.22em \@minus -0.1em}%
                        {\normalfont\normalsize\itshape}}
 
-\newcommand{\pdi}{Pentaho Data Integration }
+\newcommand{\pdi}{\textit{Pentaho Data Integration }}
 
 \newcommand{\citeAuthorPageYear}[1]{\citeauthor{#1}(\citeyear{#1})}
 \lstset{frame=tb,
