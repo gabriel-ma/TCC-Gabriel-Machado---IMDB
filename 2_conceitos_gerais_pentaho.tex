@@ -166,6 +166,29 @@ Ao executar a transformação, os dados serão carregados na tabela, como mostra
 
 \section{Mineração de Dados}
 
+\citeAuthorPageYear{jmj} dizem que o termo mineração de dados poderia ter sido chamado de mineração de conhecimentos dos dados, já que minerar é um processo para encontrar pequenas quantidades de preciosidades de uma grande quantidade de material bruto. 
+
+Outros podem falar que mineração de dados é um sinônimo de KDD (knowledge discovery from data), descobrimento de conhecimento a partir de dados. A mineração também pode ser vista como um passo essencial no processo de descoberta de conhecimento, como mostra a figura \ref{kdd}. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[height=9cm, width=9cm]{imagens/kdd.png}
+\caption{Mineração de dados como um processo de descoberta de conhecimento \citep{jmj}}
+\label{kdd}
+\end{figure}
+
+\citeauthor{jmj} sumarizam mineração de dados em o processo de descobrir padrões interessantes e conhecimento a partir de grandes quantidades de dados. Essas fontes podem ser banco de dados, a internet, data warehouses, dados transacionais, stream de dados, arquivos e etc. 
+
+A mineração de dados tem diversas funcionalidades, como caracterização, que é a sumarização das características gerais de uma classe alvo de dados, discriminação, que é a comparação das características gerais de uma classe alvo com as características de uma ou mais classes diferentes \citep{jmj}. 
+
+Também é usada para encontrar padrões que aparecem frequentemente nos dados. Existem alguns tipos de padrões, como \textit{frequent itemset}, que são itens que geralmente aparecem juntos em um conjunto de dados transacionais, \textit{frequent subsequence} ou \textit{sequencial pattern}, que pode ser o padrão de um cliente que compra primeiro um notebook, depois uma câmera digital e depois um cartão de memória \citep{jmj}. Por último, tem as \textit{frequent substructures}, que, segundo \citeauthor{jmj}, são formas estruturadas que podem aparecer frequentemente, como grafos e árvores, que podem conter \textit{itemsets} e \textit{subsequences}.
+
+Algoritmos de classificação e regressão podem ser usados para analises preditivas, tentando prever dados categóricos ou discretos. A classificação, é o processo de encontrar um modelo que melhor expressa uma classe, esse modelo é derivado da analise de um conjunto de treinamento \citep{jmj}. Os modelos podem ser representados usando árvores de decisão, formulas matemáticas, redes neurais e etc.
+
+Já a regressão, o uso mais comum é para tentar prever valores numéricos contínuos, utilizando algoritmos como regressão linear, regressão lasso e etc.
+
+Também existem os algoritmos de clusterização, que, diferente da classificação e regressão, esse processo analisa os dados sem consultar as suas classes \citep{jmj}. Em alguns casos, os dados podem até vir sem classe. \citeauthor{jmj} diz que a clusterização pode ser usada para encontrar classes para os grupos de dados. Os clusters são formados de uma forma que os objetos dentro deles tenham uma grande similaridade ao se compararem, mas bem diferentes dos objetos em outros clusters \citep{jmj}.
+
 \subsection{CRISP-DM}
 \subsubsection{O que é CRISP-DM}
 CRISP-DM, ou Cross-industry standard process for data mining, é uma técnica utilizada no processo de mineração de dados, com uma série de tarefas a serem realizadas para chegar ao melhor resultado.
@@ -255,6 +278,7 @@ Por último, é feita uma \textbf{revisão do projeto} onde o time se reúne e d
 A saída é uma documentação de experiência que sumarizar a experiência ganha com o projeto, como erros e acertos, dicas de como selecionar os melhores modelos para situações semelhantes e etc.
 
 \subsection{WEKA}
+
 O WEKA, Waikato Environment for Knowledge Analysis, é uma coleção de algoritmos de aprendizado de máquina e de ferramentas de preprocessamento de dados\citeAuthorPageYear{weka}. Ele é criado de uma forma que os algoritmos possam ser testados rapidamente nos datasets, ele também contém suporte de mineração de dados, como preparação dos dados, avaliar modelos estatisticamente, visualização dos dados e resultados da aprendizagem. Todas essas ferramentas podem ser acessadas por uma interface simples. O WEKA é escrito em Java e é distribuído sob a GNU General Public License, ele roda em quase toda plataforma e já foi testado nos sistemas operacionnais Linux, Windows e Macintosh \citeAuthorPageYear{weka}.
 
 \citeAuthorPageYear{weka} diz que o WEKA contém métodos os principais problemas de mineração de dados, como regressão, clusterização, mineração de regras de associação e seleção de atributos. Conhecer os dados é uma parte integral do trabalho. Uma das formas de utilizar o WEKA é aplicando um método aos dados e analisar a saída para aprender mais sobre os dados \citeAuthorPageYear{weka}, outra é utilizando modelos para gerar previsões em novas instancias. Uma terceira forma é aplicar diferentes algoritmos e comparar as performances para poder selecionar um para previsão \citeAuthorPageYear{weka}. Uma terceira forma é usar diferenntes algoritmos de aprendizado e comparar seus resultados para selecionar um para fazer a previsão. \citeAuthorPageYear{weka} diz que a implementação de algoritmos de aprendizado é um dos recursos mais valiosos que o WEKA fornece, enquanto os métodos de preprocessamento, também chamados de \textit{filters}, vem logo em seguida. 
