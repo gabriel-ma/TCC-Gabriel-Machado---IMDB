@@ -81,9 +81,7 @@
 
 \newcommand{\pdi}{Pentaho Data Integration }
 
-\newcommand{\citeAuthorPageYear}[1]{
-    \citeauthor{#1}(\citeyear{#1})
-}
+\newcommand{\citeAuthorPageYear}[1]{\citeauthor{#1}(\citeyear{#1})}
 \lstset{frame=tb,
   language=Python,
   aboveskip=3mm,
