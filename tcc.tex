@@ -1,0 +1,158 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TCC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Template para TCC da Universidade Federal da Paraíba
+%
+% Autores: Elaine Soares elaineanita1@gmail.com
+%          Rafael Brayner rafabrayner92@gmail.com
+%          Roberto Júnior contato@robertojunior.net
+%
+% ShareLaTeX porting: Gustavo Sobral ghsobral@gmail.com
+% 
+% Revisão: Eudisley Anjos eudisley@ci.ufpb.br
+%
+% Sinta-se livre para melhorar e contribuir com esse projeto. 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{tcc}
+
+\begin{document}
+\pagestyle{empty} %retira numeração da página
+\input{dados_tcc}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=2]{imagens/logo.png}
+\end{figure}
+\begin{center}
+\textbf{\large{Faculdade Nova Roma}}\\
+\textbf{\large{BACHARELADO EM CIÊNCIA DA COMPUTAÇÃO}}
+\end{center}
+
+\vspace{5em}
+
+\begin{center}
+\Large{\bf \MakeUppercase {\theauthor}}
+\end{center}
+\vspace{2em}
+\begin{center}
+\LARGE{\bf \MakeUppercase{\thetitle}}
+\end{center}
+
+\vfill
+
+
+
+
+
+
+\vspace{2in}
+
+\begin{center}
+Recife, \MONTH, \the\year
+\end{center}
+
+\newpage
+\begin{center}
+\Large{\bf \MakeUppercase{\theauthor}}
+\end{center}
+\vspace{3in}
+\begin{center}
+\LARGE{\bf \thetitle}
+
+
+\end{center}
+
+\vspace{2in}
+
+\begin{flushright}
+Trabalho de Conclusão de Curso apresentado à \\Faculdade Nova Roma como pré-requisito parcial\\ para obtenção do título de Bacharel.\\
+\vspace{0.2in}
+Orientador: \orientador
+\end{flushright}
+
+\vfill
+\begin{center}
+\MONTH de \the\year
+\end{center}
+
+\newpage
+\begin{center}
+\Large{\bf \MakeUppercase{\theauthor}}
+\end{center}
+\vspace{3in}
+\begin{center}
+\LARGE{\bf \thetitle}
+\end{center}
+
+\vspace{0.05in}
+
+\begin{flushright}
+Trabalho de Conclusão de Curso apresentado à\\ Faculdade Nova Roma como pré-requisito parcial\\ para obtenção do título de Bacharel, sob orientação\\ do \orientador
+\end{flushright}
+
+\vspace{0.7in}
+
+\hrule
+\noindent Prof. Dr. \profa\\
+\insta\\
+
+\vspace{0.25in}
+
+\hrule
+\noindent Prof. Dr. \profb\\
+\instb\\
+
+\vspace{0.25in}
+
+\hrule
+\noindent Prof. Dr. \profc\\
+\instc\\
+
+
+\newpage
+
+%Agradecimentos%
+\input{b_agradecimentos}
+
+\newpage
+
+%Resumo%
+\input{c_resumo}
+\input{d_abstract}
+\newpage
+
+%Lista de figuras%
+\renewcommand{\listfigurename}{\centering LISTA DE FIGURAS}
+\listoffigures
+\newpage
+
+%Lista de tabelas%
+\renewcommand{\listtablename}{\centering LISTA DE TABELAS}
+\listoftables
+\newpage
+
+\input{e_abreviaturas}
+
+\newpage
+
+%Sumário%
+
+\pagestyle{plain} %mostra numeração da página%
+\tableofcontents
+
+\newpage
+\input{1_introducao}
+\input{2_conceitos_gerais_data_warehouse}
+\input{2_conceitos_gerais_pentaho}
+\input{3_metodologia}
+\input{5_conclusoes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Referências 
+
+\nocite{*}
+\bibliography{references} 
+\bibliographystyle{plain}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
