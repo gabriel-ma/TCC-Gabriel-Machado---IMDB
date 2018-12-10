@@ -1,5 +1,5 @@
 \section{Pentaho Data Integration}
-Nas seções anteriores foi discutido um pouco sobre as principais características de um Data Warehouse e do processo CRISP-DM. Nessa seção, será discutida o uso do \pdi (PDI) no processo de ETL, como ela pode ser aplicada e suas principais características.
+Nas seções anteriores discutiu-se um pouco sobre as principais características de um Data Warehouse e do processo CRISP-DM. Nessa seção, será discutida o uso do \pdi (PDI) no processo de ETL, como ela pode ser aplicada e suas principais características.
 O PDI, também conhecido como Kettle, oferece diversas ferramentas para a extração de dados de fontes diversas, transformações, limpezas e de carregamento dos dados
 \subsubsection{Arquitetura}
 O \pdi é composto basicamente de quatro componentes:
@@ -11,23 +11,23 @@ O \pdi é composto basicamente de quatro componentes:
 \end{itemize}
 
 \subsubsection{Princípios de Design}
-\citeAuthorPageYear{kettle} dizem que o Pentaho foi desenvolvido com alguns princípios de design fundamentais. Algumas experiências negativas levaram a essas decisões. são eles:
+\citeAuthorPageYear{kettle} afirmam que o Pentaho foi desenvolvido com alguns princípios de design fundamentais. Algumas experiências negativas levaram a essas decisões. são eles:
 
-Ele é de fácil desenvolvimento, não é preciso se preocupar com instalação de \textit{software}. Segundo \citeAuthorPageYear{kettle}, várias ferramentas baseadas em Java precisavam que o usuário especificasse explicitamente qual era o nome da Classe Java do Driver e a URL do JDBC, apenas para criar uma conexão com o banco de dados. O Kettle sempre tentou ficar longe desses problemas \citep{kettle}. Ele evita a necessidade de programar, toda linha de código adiciona complexidade e custo de manutenção ao projeto, então faz sentido não ter que lidar com isso \citep{kettle}.
+Ele é de fácil desenvolvimento, não é preciso se preocupar com instalação de \textit{software}. Conforme \citeAuthorPageYear{kettle}, várias ferramentas baseadas em Java precisavam que o usuário especificasse explicitamente qual era o nome da Classe Java do Driver e a URL do JDBC, apenas para criar uma conexão com o banco de dados. O Kettle sempre tentou ficar longe desses problemas \citep{kettle}. Ele evita a necessidade de programar, toda linha de código adiciona complexidade e custo de manutenção ao projeto, então faz sentido não ter que lidar com isso \citep{kettle}.
 
 O \pdi mantém as funcionalidades disponíveis na interface de usuário. \citeAuthorPageYear{kettle} afirmam que é possível realizar ETL por XML, repositório ou uma API, e todas essas opções também estão disponíveis em uma interface gráfica. Sem limitações de nomenclatura, as ferramentas de ETL precisam ser inteligentes para lidar com qualquer tipo de identificador, isso possibilita que a solução seja auto-descritiva e reduza parcialmente a necessidade de documentação \citep{kettle}.
 
-\citeAuthorPageYear{kettle} dizem que deixar que qualquer pessoa veja o que está acontecendo nas várias partes de um processo de ETL é crucial, pois oportuniza acelerar o desenvolvimento e reduzir o custo. Fluxo de dados flexível, o \pdi foi criado para ser o mais flexível possível, respeitando os fluxos que são criados \citep{kettle}. Apenas mapear dados impactados, \citeAuthorPageYear{kettle} dizem que um dos princípios fundamentais do Kettle é que todos os campos que não são mapeados passam automaticamente para o próximo passo do processo, reduzindo assim o custo de manutenção.
+\citeAuthorPageYear{kettle} falam que deixar que qualquer pessoa veja o que está acontecendo nas várias partes de um processo de ETL é crucial, pois oportuniza acelerar o desenvolvimento e reduzir o custo. Fluxo de dados flexível, o \pdi foi criado para ser o mais flexível possível, respeitando os fluxos que são criados \citep{kettle}. Apenas mapear dados impactados, \citeAuthorPageYear{kettle} dizem que um dos princípios fundamentais do Kettle é que todos os campos que não são mapeados passam automaticamente para o próximo passo do processo, reduzindo assim o custo de manutenção.
 
 \subsubsection{Processo}
-Ao abrir o \pdi, ele apresenta a página inicial, como mostra na figura \ref{initialpdi}. Dessa tela é possível criar \textit{Jobs} e \textit{Transformations}, que serão explicados mais pra frente. 
+Ao abrir o \pdi, ele apresenta a página inicial, como mostrado na figura \ref{initialpdi}. Dessa tela é possível criar \textit{Jobs} e \textit{Transformations}, que serão explicados mais pra frente. 
 \begin{figure}[H]
 \centering
 \includegraphics[height=5cm]{imagens/pagina_principal_pentaho.png}
 \caption{Página inicial do \pdi}
 \label{initialpdi}
 \end{figure}
-O \pdi tem \textit{transformations} que pode conter uma série de \textit{steps} e \textit{jobs} para realizar o processo de ETL. A figura \ref{transformationOptions} mostra algumas das opções para criação de \textit{transformations}.
+O \pdi tem \textit{transformations} que pode conter uma série de \textit{steps} e \textit{jobs} para realizar o processo de ETL. A figura \ref{transformationOptions} exibe algumas das opções para criação de \textit{transformations}.
 \begin{figure}[H]
 \centering
 \includegraphics[width=4cm, height=8cm]{imagens/opcoes_de_transformacao.png}
@@ -35,7 +35,7 @@ O \pdi tem \textit{transformations} que pode conter uma série de \textit{steps}
 \label{transformationOptions}
 
 \end{figure}
-\textit{Transformation}, segundo \citeAuthorPageYear{kettle}, consiste em um ou mais \textit{steps}, que realizam a leitura de arquivos, filtram linhas, limpam dos dados e carregam dos dados em uma base de dados. Os \textit{steps} são conectados por \textit{hops}, que são caminhos de um único sentido por onde os dados trafegam. 
+\textit{Transformation}, conforme \citeAuthorPageYear{kettle}, consiste em um ou mais \textit{steps}, que realizam a leitura de arquivos, filtram linhas, limpam dos dados e carregam dos dados em uma base de dados. Os \textit{steps} são conectados por \textit{hops}, que são caminhos de um único sentido por onde os dados trafegam. 
 
 \begin{figure}[H]
 \centering
@@ -50,7 +50,7 @@ Um \textit{step} é representado graficamente por um bloco; eles precisam ter um
 
 Um \textit{hop} é representado por uma seta ligando dois \textit{steps}, que define o fluxo dos dados entre eles \citep{kettle}. Um \textit{hop} também representa um \textit{buffer} de dados, chamado de \textit{row set}, que quando está cheio, o \textit{step} que escreve os dados para e quando está vazio, o \textit{step} que lê os dados aguarda até que mais dados sejam escritos.
 
-Os \textit{jobs} são um conjunto de um ou mais \textit{jobs entries}, executados em uma certa ordem. A figura \ref{jobsOptions} mostra algumas opções que podem ser aplicadas para criar \textit{jobs}. Os\textit{ job entries}, assim como os \textit{steps}, são passos executados. Eles são conectados por meio de \textit{job hops}, que definem o caminho de execução entre os \textit{job entries} \citep{kettle}.
+Os \textit{jobs} são um conjunto de um ou mais \textit{jobs entries}, executados em uma certa ordem. A figura \ref{jobsOptions} exibe algumas opções que podem ser aplicadas para criar \textit{jobs}. Os\textit{ job entries}, assim como os \textit{steps}, são passos executados. Eles são conectados por meio de \textit{job hops}, que definem o caminho de execução entre os \textit{job entries} \citep{kettle}.
 \begin{figure}[H]
 \centering
 \includegraphics[width=7cm, height=9cm]{imagens/opcoes_de_jobs.png}
@@ -92,7 +92,7 @@ Utilizou-se um \textit{step} chamado \textit{Dummy} (figura \ref{dummy}), que n�
 \caption{Dummy}
 \label{dummy}
 \end{figure}
-Após a execução, as métricas de cada \textit{step} ficam disponíveis, a figura \ref{metrics} mostra que o \textit{step} \textit{"Text file input" }escreveu 5 registros e o \textit{Dummy} leu 5.
+Após a execução, as métricas de cada \textit{step} ficam disponíveis, na figura \ref{metrics} é visto que o \textit{step} \textit{"Text file input" }escreveu 5 registros e o \textit{Dummy} leu 5.
 \begin{figure}[H]
 \centering
 \includegraphics[height=2cm]{imagens/metrics.png}
@@ -101,7 +101,7 @@ Após a execução, as métricas de cada \textit{step} ficam disponíveis, a fig
 \end{figure}
 \vfill
 \subsubsection{Transform}
-Existem diversas possíveis transformações a serem aplicadas nos dados extraídos, como limpeza de campos nulos, geração de novos atributos, formatação de campos. Para isso, o \pdi oferece diversas ferramentas para realizar esse trabalho, como mostra a figura \ref{transformsteps} abaixo.
+Existem diversas possíveis transformações a serem aplicadas nos dados extraídos, como limpeza de campos nulos, geração de novos atributos, formatação de campos. Para isso, o \pdi oferece diversas ferramentas para realizar esse trabalho, como visto a figura \ref{transformsteps} abaixo.
 \begin{figure}[H]
 \centering
 \includegraphics[width=7cm, height=9cm]{imagens/transforms.png}
@@ -130,14 +130,14 @@ A saída desse \textit{step} é ser vista no \textit{preview} (figura \ref{previ
 \label{preview}
 \end{figure}
 \subsubsection{Load}
-A última etapa do ETL é o \textit{Load} (carregamento), o \pdi oferece diversas formas de carregamento, como mostra na figura \ref{outputsteps}.
+A última etapa do ETL é o \textit{Load} (carregamento), o \pdi oferece diversas formas de carregamento (figura \ref{outputsteps}).
 \begin{figure}[H]
 \centering
 \includegraphics[width=7cm, height=9cm]{imagens/output.png}
 \caption{Steps da categoria output}
 \label{outputsteps}
 \end{figure}
-Usando os dados gerados na etapa de transformação, os dados serão carregados em uma tabela no banco de dados, para isso uma conexão no Pentaho é definida e o \textit{step} \textit{"Table output"} é criado, como mostra a figura \ref{outputstep} abaixo.
+Usando os dados gerados na etapa de transformação, os dados serão carregados em uma tabela no banco de dados, para isso uma conexão no Pentaho é definida e o \textit{step} \textit{"Table output"} é criado, como mostrado na figura \ref{outputstep} abaixo.
 \begin{figure}[H]
 \centering
 \includegraphics[height=2cm]{imagens/tableoutput.png}
@@ -168,7 +168,7 @@ Ao executar a transformação, os dados serão carregados na tabela, como mostra
 
 \section{Mineração de Dados}
 
-\citeAuthorPageYear{jmj} dizem que o termo mineração de dados poderia ter sido chamado de mineração de conhecimentos dos dados, já que minerar é um processo para encontrar pequenas quantidades de preciosidades de uma grande quantidade de material bruto. 
+O termo mineração de dados poderia ter sido chamado de mineração de conhecimentos dos dados \citep{jmj}, já que minerar é um processo para encontrar pequenas quantidades de preciosidades de uma grande quantidade de material bruto. 
 
 Outros dizem que mineração de dados é um sinônimo de KDD (\textit{knowledge discovery from data}), descobrimento de conhecimento a partir de dados. A mineração também é vista como um passo essencial no processo de descoberta de conhecimento, como mostra a figura \ref{kdd}. 
 
@@ -183,13 +183,13 @@ Outros dizem que mineração de dados é um sinônimo de KDD (\textit{knowledge 
 
 A mineração de dados tem diversas funcionalidades, como caracterização (sumarização das características gerais de uma classe alvo de dados) e discriminação (comparação das características gerais de uma classe alvo com as características de uma ou mais classes diferentes) \citep{jmj}. 
 
-Também é usada para encontrar padrões que aparecem frequentemente nos dados. Existem alguns tipos de padrões, como \textit{frequent itemset}, itens que geralmente aparecem juntos em um conjunto de dados transacionais, \textit{frequent subsequence} ou \textit{sequencial pattern}, que, por exemplo, é o padrão de um cliente que compra primeiro um \textit{notebook}, seguido de uma câmera digital e então um cartão de memória \citep{jmj}. Por último, tem as \textit{frequent substructures}, que, segundo \citeauthor{jmj}, são formas estruturadas que aparecem frequentemente, como grafos e árvores, que podem conter \textit{itemsets} e \textit{subsequences}.
+Também é usada para encontrar padrões que aparecem frequentemente nos dados. Existem alguns tipos de padrões, como \textit{frequent itemset}, itens que geralmente aparecem juntos em um conjunto de dados transacionais, \textit{frequent subsequence} ou \textit{sequencial pattern}, que, por exemplo, é o padrão de um cliente que compra primeiro um \textit{notebook}, seguido de uma câmera digital e então um cartão de memória \citep{jmj}. Por último, tem as \textit{frequent substructures}, que são formas estruturadas que aparecem frequentemente, como grafos e árvores, que podem conter \textit{itemsets} e \textit{subsequences}  \citep{jmj}.
 
 Algoritmos de classificação e regressão são usados para análises preditivas, tentando prever dados categóricos ou discretos. A classificação é o processo de encontrar um modelo que melhor expressa uma classe. Esse modelo é derivado da análise de um conjunto de treinamento \citep{jmj}. Os modelos são representados usando árvores de decisão, fórmulas matemáticas, redes neurais etc.
 
-Já a regressão, o uso mais comum é para tentar prever valores numéricos contínuos, com algoritmos como regressão linear, regressão lasso etc.
+Já a regressão, o uso mais comum é para tentar prever valores numéricos contínuos, com algoritmos como regressão linear, regressão LASSO etc.
 
-Também existem os algoritmos de clusterização, que, diferentemente da classificação e regressão, analisam os dados sem consultar as suas classes \citep{jmj}. Em alguns casos, os dados até vem sem classe. \citeauthor{jmj} dizem que a clusterização é ser usada para encontrar classes para os grupos de dados. Os \textit{clusters} são formados de uma forma que os objetos dentro deles tenham uma grande similaridade ao se compararem, mas se diferenciam dos objetos em outros \textit{clusters} \citep{jmj}.
+Também existem os algoritmos de clusterização, que, diferentemente da classificação e regressão, analisam os dados sem consultar as suas classes \citep{jmj}. Em alguns casos, os dados até vem sem classe. \citeauthor{jmj} dizem que a clusterização é ser usada para encontrar classes para os grupos de dados. Os \textit{clusters} são formados de uma forma que os objetos dentro deles tenham uma grande similaridade ao se compararem uns com os outros, mas se diferenciam dos objetos em outros \textit{clusters} \citep{jmj}.
 
 \subsection{CRISP-DM}
 \subsubsection{O que é CRISP-DM}
@@ -216,7 +216,7 @@ Outra etapa é determinar os objetivos da mineração de dados, por exemplo, com
 E então produzir plano de projeto, ou seja, o plano desejado para atingir os objetivos da mineração de dados e desse modo, os objetivos do negócio \citep{crispmanual}. Esse processo produz o plano de projeto e avaliações iniciais de ferramentas e técnicas.
 
 \subsubsection{Entendimento dos dados}
-Segundo \citeAuthorPageYear{dmfd}, na segunda etapa do projeto de mineração de dados, os dados têm que ser obtidos e deve-se verificar se eles são apropriados para as necessidades.
+De acordo com \citeAuthorPageYear{dmfd}, na segunda etapa do projeto de mineração de dados, os dados têm que ser obtidos e deve-se verificar se eles são apropriados para as necessidades.
 
 A primeira tarefa desse processo é coletar dados iniciais e então realizar, caso necessário, o carregamento dos dados em alguma ferramenta. Nessa tarefa é produzida uma lista de todos os \textit{datasets} adquiridos, junto com localizações, métodos realizados para coleta e problemas encontrados.
 
@@ -231,7 +231,7 @@ Essa parte tem duas saídas, antes das tarefas, que são: \textbf{datasets}, dad
 
 A primeira tarefa é \textbf{selecionar os dados} que serão usados na modelagem, baseando-se nos objetivos da mineração de dados, qualidade e limites técnicos \citep{crispmanual}. É criada uma lista de dados que foram incluídos e excluídos e a razão para isso.
 
-Posteriormente é feita uma \textbf{limpeza dos dados}, que eleva a qualidade dos dados para o nível requerido pelas técnicas de análise selecionadas \citep{crispmanual}. Segundo \citeAuthorPageYear{dmfd}, dificilmente os dados selecionados estarão perfeitamente limpos, mudanças precisarão ser feitas nos dados para atingir o nível necessário. \citeAuthorPageYear{crispmanual} dizem que transformações nos dados são feitas para limpeza e possível impacto na análise de resultados. Nessa etapa é criado um relatório de limpeza de dados: que descreve as ações tomadas para lidar com os problemas encontrados anteriormente.
+Posteriormente é feita uma \textbf{limpeza dos dados}, que eleva a qualidade dos dados para o nível requerido pelas técnicas de análise selecionadas \citep{crispmanual}. De acordo com \citeAuthorPageYear{dmfd}, dificilmente os dados selecionados estarão perfeitamente limpos, mudanças precisarão ser feitas nos dados para atingir o nível necessário. \citeAuthorPageYear{crispmanual} falam que transformações nos dados são feitas para limpeza e possível impacto na análise de resultados. Nessa etapa é criado um relatório de limpeza de dados: que descreve as ações tomadas para lidar com os problemas encontrados anteriormente.
 
 A tarefa seguinte é \textbf{Construir dados}, que consiste na criação de novos campos, dados agregados, ou novos formatos de dados. É produzida uma lista de atributos derivados a partir dos que já existem e explica como e por que eles foram gerados e uma lista de registros criados, junto com o motivo e como eles foram formados.
 
@@ -257,9 +257,9 @@ Avaliar todo o processo: não só os modelos, mas também o processo empregado p
 
 A primeira tarefa é \textbf{avaliar resultados}. Ela avalia o grau em que o modelo se adequa ao objetivo original do negócio e busca determinar se existe alguma razão para o modelo estar deficiente.
 
-Ela também avalia o resultado da mineração de dados a respeito do critério de sucesso do negócio, \citeAuthorPageYear{dmfd} afirma que esse processo serve para dizer se o projeto atingiu ou não os objetivos definidos no início e seleciona os modelos que atingiram o critério selecionado.
+Ela também avalia o resultado da mineração de dados a respeito do critério de sucesso do negócio, \citeAuthorPageYear{dmfd} mostra que esse processo serve para dizer se o projeto atingiu ou não os objetivos definidos no início e seleciona os modelos que atingiram o critério selecionado.
 
-Após a última tarefa, é feita uma \textbf{revisão do processo}, nesse ponto, os modelos resultantes aparentam ser satisfatórios para a necessidade do negócio \citep{crispmanual}. Essa é um passo usado para rever o processo, como algum problema que foi negligenciado. \citeAuthorPageYear{crispmanual} dizem que se deve sumarizar a revisão e ressaltar as atividades que não foram realizadas e aquelas que devem ser repetidas.
+Após a última tarefa, é feita uma \textbf{revisão do processo}, nesse ponto, os modelos resultantes aparentam ser satisfatórios para a necessidade do negócio \citep{crispmanual}. Essa é um passo usado para rever o processo, como algum problema que foi negligenciado. \citeAuthorPageYear{crispmanual} mostram que se deve sumarizar a revisão e ressaltar as atividades que não foram realizadas e aquelas que devem ser repetidas.
 
 A última fase é \textbf{determinar próximos passos}. A fase de avaliação é concluída com as recomendações para o próximo passo \citep{dmfd}. Decidir se deve finalizar o projeto ou continuar o desenvolvimento. Essa fase também inclui a análise das despesas e recursos restantes, que tem influencia na decisão \citep{crispmanual}.
 Essa etapa produz uma lista de possíveis ações e a decisão.
@@ -269,7 +269,7 @@ O objetivo dessa última parte é a implementação do modelo.
 O primeiro passo é o plano de implementação, usando os resultados da avaliação e determina a estratégia de implementação \citep{crispmanual}. 
 
 A primeira parte é gerar um plano que sumariza as estratégias para implementação, os passos necessários e como realizar.
-Posteriormente é feito um \textbf{Plano de monitoramento e manutenção}, segundo \citeAuthorPageYear{dmfd}, a mineração de dados é um ciclo, então existe a necessidade continuar envolvida com os modelos enquanto eles são integrados ao dia-a-dia. A preparação cuidadosa das estratégias de manutenção ajuda a evitar longos períodos desnecessários de uso incorreto dos resultados da mineração \citep{crispmanual}.
+Posteriormente é feito um \textbf{Plano de monitoramento e manutenção}, conforme \citeAuthorPageYear{dmfd} diz, a mineração de dados é um ciclo, então existe a necessidade continuar envolvida com os modelos enquanto eles são integrados ao dia-a-dia. A preparação cuidadosa das estratégias de manutenção ajuda a evitar longos períodos desnecessários de uso incorreto dos resultados da mineração \citep{crispmanual}.
 
 Em seguida é produzido um plano de monitoramento e manutenção que sumariza todas as estratégias de manutenção e monitoramento, incluindo os passos necessários para realizá-los \citep{crispmanual}.
 Em seguida, é feito um \textbf{Relatório Final}, um sumário do projeto e das experiências ou uma apresentação final e compreensível dos resultados da mineração \citep{crispmanual}.
@@ -284,7 +284,7 @@ O WEKA, \textit{Waikato Environment for Knowledge Analysis}, é uma coleção de
 
 \citeAuthorPageYear{weka} afirmam que o WEKA contém métodos para os principais problemas de mineração de dados, como regressão, clusterização, mineração de regras de associação e seleção de atributos. Conhecer os dados é uma parte integral do trabalho. Uma das formas de se usar o WEKA é aplicando um método aos dados e analisando a saída para aprender mais sobre os dados \citep{weka}, outra é selecionando modelos para gerar previsões em novas instâncias. Uma terceira forma é aplicar diferentes algoritmos e comparar as performances para então selecionar um para previsão \citeAuthorPageYear{weka}. \citeAuthorPageYear{weka} dizem que a implementação de algoritmos de aprendizado é um dos recursos mais valiosos que o WEKA fornece, enquanto os métodos de preprocessamento, também chamados de \textit{filters}, vêm logo após. 
 
-\citeAuthorPageYear{weka} dizem que o WEKA é facilmente usado através de uma interface gráfica chamada de \textit{Explorer}. Por exemplo, um \textit{dataset} é facilmente carregado e construir uma árvore de decisão em cima dele. O WEKA também tem outras interfaces, como o \textit{Knowledge Flow}, que facilita processar dados via \textit{streaming} e o \textit{Experimenter}, que permite responder uma pergunta bem básica e prática: quais métodos e valores de parâmetros funcionam melhor para determinado problema? O WEKA fornecer um ambiente que possibilita aos usuários do WEKA comparar uma variedade de algoritmos de aprendizado. \citeAuthorPageYear{weka} dizem que é possível fazer isso interativamente usando a  interface \textit{Explorer}, mas o \textit{Experimenter} facilita a automatização do processo, deixando mais fácil de rodar classificadores e filtros em um \textit{dataset}, para coletar estatísticas de performance.
+Nas palavras de \citeAuthorPageYear{weka}, o WEKA é facilmente usado através de uma interface gráfica chamada de \textit{Explorer}. Por exemplo, um \textit{dataset} é facilmente carregado e construir uma árvore de decisão em cima dele. O WEKA também tem outras interfaces, como o \textit{Knowledge Flow}, que facilita processar dados via \textit{streaming} e o \textit{Experimenter}, que permite responder uma pergunta bem básica e prática: quais métodos e valores de parâmetros funcionam melhor para determinado problema? O WEKA fornecer um ambiente que possibilita aos usuários do WEKA comparar uma variedade de algoritmos de aprendizado. \citeAuthorPageYear{weka} ainda falam que é possível fazer isso interativamente usando a  interface \textit{Explorer}, mas o \textit{Experimenter} facilita a automatização do processo, deixando mais fácil de rodar classificadores e filtros em um \textit{dataset}, para coletar estatísticas de performance.
 
 Além disso, todas essas opções podem ser acessadas através de uma interface de linha de comando.
 
@@ -292,7 +292,7 @@ Além disso, todas essas opções podem ser acessadas através de uma interface 
 A interface gráfica principal do WEKA é a \textit{Explorer}. Diversas operações são feitas nessa interface.
 
 \subsubsection{Carregando os dados}
-Ao abrir o WEKA, deve-se selecionar a opção \textit{explorer}, como mostra a figura \ref{explorer}:
+Ao abrir o WEKA, deve-se selecionar a opção \textit{explorer}, como mostrado na figura \ref{explorer}:
 
 \begin{figure}[H]
 \centering
@@ -310,7 +310,7 @@ Ao abrir o \textit{explorer}, a tela deverá exibir diversas opções para carre
 \label{figura19}
 \end{figure}
 
-Ao carregar os dados, informações sobre cada um dos atributos é exibida no canto inferior direito e todos os atributos estarão listados no canto esquerdo, como mostra a figura \ref{loadeddata}. A figura \ref{distribuicao} mostra que é possível obter uma distribuição dos valores de cada um dos atributos disponíveis.
+Ao carregar os dados, informações sobre cada um dos atributos é exibida no canto inferior direito e todos os atributos estarão listados no canto esquerdo, como visto na figura \ref{loadeddata}. A figura \ref{distribuicao} mostra que é possível obter uma distribuição dos valores de cada um dos atributos disponíveis.
 
 \begin{figure}[H]
 \centering
@@ -326,7 +326,7 @@ Ao carregar os dados, informações sobre cada um dos atributos é exibida no ca
 \label{distribuicao}
 \end{figure}
 
-Com o WEKA, é possível criar modelos de classificação e de clusterização. Nesse caso, foi usado o de classificação, como mostra a figura \ref{classificationinterface}. 
+Com o WEKA, é possível criar modelos de classificação e de clusterização. Nesse caso, foi usado o de classificação (figura \ref{classificationinterface}).
 
 \begin{figure}[H]
 \centering

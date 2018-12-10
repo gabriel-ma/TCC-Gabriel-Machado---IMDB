@@ -38,18 +38,18 @@
 
 \newcommand{\MONTH}{%
   \ifcase\the\month
-  \or Janeiro % 1
-  \or Fevereiro % 2
-  \or Mar\c{c}o % 3
-  \or Abril % 4
-  \or Maio % 5
-  \or Junho % 6
-  \or Julho % 7
-  \or Agosto % 8
-  \or Setembro % 9
-  \or Outubro % 10
-  \or Novembro % 11
-  \or Dezembro % 12
+  \or Janeiro% 1
+  \or Fevereiro% 2
+  \or Mar\c{c}o% 3
+  \or Abril% 4
+  \or Maio% 5
+  \or Junho% 6
+  \or Julho% 7
+  \or Agosto% 8
+  \or Setembro% 9
+  \or Outubro% 10
+  \or Novembro% 11
+  \or Dezembro% 12
   \fi}
 
 %Formata parágrafo%

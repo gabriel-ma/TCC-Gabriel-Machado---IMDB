@@ -45,7 +45,7 @@ Fontes de Dados Operacionais, nas palavras de \citeAuthorPageYear{kimball2013}, 
 \citeAuthorPageYear{kimball2002} sugerem que a \textit{staging area} é tanto uma área de armazenamento como um conjunto de processos conhecidos como \textit{extract-transformation-loading} (ETL). Esse processo será melhor explicado mais pra frente. Eles ainda falam que a \textit{staging area} é tudo entre os \textit{operational source systems} e a \textit{presentation area}. 
 
 Existem diversas formas de carregar dados na \textit{staging area}, como \textit{flat files}, xml, modelos relacionais. Ela regularmente é composta de um \textit{database management system} (DBMS) e arquivos de texto (\textit{flat files}) \citep{kimball2004}. Em muitos casos, os dados precisam ser armazenados fora de um DBMS, em \textit{flat files}, para um rápido processamento sequencial \citep{kimball2004}.
-\citeAuthorPageYear{kimball2002} descrevem o primeiro passo na criação (extração) de um \textit{data staging area} como a leitura e entendimento da fonte de dados e copiar o que for necessário para manipulação futura. \citeAuthorPageYear{kimball2002} afirma que quando os dados são extraídos, existem diversas transformações que podem ser feitas, como limpeza, combinação de dados de diferentes fontes, remoção dados duplicados etc. Essas transformações acontecem antes de se carregar os dados na \textit{presentation area}.
+\citeAuthorPageYear{kimball2002} descrevem o primeiro passo na criação (extração) de um \textit{data staging area} como ler e entender da fonte de dados e copiar o que for necessário para manipulação futura. \citeAuthorPageYear{kimball2002} afirma que quando os dados são extraídos, existem diversas transformações que podem ser feitas, como limpeza, combinação de dados de diferentes fontes, remoção dados duplicados etc. Essas transformações acontecem antes de se carregar os dados na \textit{presentation area}.
 
 \subsubsection{Data Presentation Area}
 A \textit{presentation area}, ou área de apresentação, é onde os dados estão organizados, armazenados e disponíveis para consulta por usuários ou alguma aplicação analítica de \textit{Business Intelligence} (BI) \citep{kimball2013}. Tudo que o negócio vê e toca é através das ferramentas de acesso ou aplicações de BI.
@@ -64,7 +64,7 @@ O processo de \textit{extract, transform, load} (extrair, transformar, carregar)
 \caption{Processo de ETL (\citeauthor{kimball2004} \citeyear{kimball2004})}
 \label{etl}
 \end{figure}
-O primeiro passo é a extração dos dados: espera-se que o sistema tenha que extrair dados de uma grande variedade de fontes \citep{kimball2013}. As organizações podem extrair dados de fontes como arquivos xml, banco de dados, planilhas etc.
+O primeiro passo é a extração dos dados: espera-se que o sistema extraia dados de uma grande variedade de fontes \citep{kimball2013}. As organizações podem extrair dados de fontes como arquivos xml, banco de dados, planilhas etc.
 
 O segundo passo é a transformação: após os dados serem extraídos, diversas transformações podem ser executadas, como limpeza, que irá remover alguns ruídos, combinação de dados de fontes diversas (bancos de dados, \textit{data warehouses}, arquivos csv, planilhas, etc) e tratar dados duplicados\citep{kimball2013}. Essa limpeza pode, nas palavras de \citeAuthorPageYear{kimball2013}, mudar os dados e aperfeiçoar o seu valor para uma organização.
 
