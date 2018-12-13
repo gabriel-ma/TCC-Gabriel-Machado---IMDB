@@ -1,4 +1,5 @@
 \section{Estudo de Caso}
+Esse estudo de caso apresenta uma análise exploratória de uma base de dados do IMDB\footnote{\url{https://www.kaggle.com/carolzhangdc/predict-imdb-score-with-data-mining-algorithms/data}}, retirada do Kaggle\footnote{\url{https://www.kaggle.com/}}, que é uma ferramenta de competições e aprendizado online de ciência de dados, e serão aplicados modelos de aprendizado de máquina para tentar prever, com o menor erro possível, a nota dos filmes. Nessa análise, serão retiradas observações que podem auxiliar na criação do modelo de aprendizado.
 \subsection{Analise Exploratória}
 A tabela 2 contém todas as colunas que existem na base de dados. Um total de 28 colunas numéricas e de texto e 5093 registros. A maioria dos dados tem uma porcentagem de dados faltantes abaixo de 1\%, mas outros, como \textbf{director\_name}, \textbf{plot\_keywords} têm mais de 2\% e a coluna de lucro (\textit{gross}) possui 17.5\%, o que pode atrapalhar um pouco no processo, mas isso ainda não pode ser dito com certeza
 \input{datatable1.tex}
@@ -111,7 +112,7 @@ Em resumo:
 \end{itemize}
 
 \subsubsection{Resultados}
-As análises realizadas levaram em conta o MSE, \textit{mean squared error}, e os valores foram elevados ao quadrado, no caso RMSE, \textit{root mean squared error}, que calcula a raiz do MSE, como mostra a formula abaixo:
+As análises realizadas levaram em conta o RMSE, \textit{root mean squared error}, que calcula a raiz da diferença entre valor previsto e o valor real, como mostra a formula abaixo:
 
 $RMSE = \sqrt{\frac{1}{n}\Sigma_{i=1}^{n}{\Big({predicted-actual}\Big)^2}}$
  
