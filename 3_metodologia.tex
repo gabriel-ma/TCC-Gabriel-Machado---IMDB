@@ -1,5 +1,7 @@
 \section{Estudo de Caso}
 Esse estudo de caso apresenta uma análise exploratória de uma base de dados do IMDB\footnote{\url{https://www.kaggle.com/carolzhangdc/predict-imdb-score-with-data-mining-algorithms/data}}, retirada do Kaggle\footnote{\url{https://www.kaggle.com/}}, que é uma ferramenta de competições e aprendizado online de ciência de dados, e serão aplicados modelos de aprendizado de máquina para tentar prever, com o menor erro possível, a nota dos filmes. Nessa análise, serão retiradas observações que podem auxiliar na criação do modelo de aprendizado.
+
+Essa base de dados, a \textit{MDB 5000 Movie Dataset}, foi adquirida de forma gratuita no Kaggle, ela nunca foi utilizada em competições. Esses dados contém informações de cerca de 5000 filmes retirados do IMDB e apresenta informações como lucro, investimento, quem dirigiu, o ano em que foi publicado, atores e atrizes principais, duração etc.
 \subsection{Analise Exploratória}
 A tabela 2 contém todas as colunas que existem na base de dados. Um total de 28 colunas numéricas e de texto e 5093 registros. A maioria dos dados tem uma porcentagem de dados faltantes abaixo de 1\%, mas outros, como \textbf{director\_name}, \textbf{plot\_keywords} têm mais de 2\% e a coluna de lucro (\textit{gross}) possui 17.5\%, o que pode atrapalhar um pouco no processo, mas isso ainda não pode ser dito com certeza
 \input{datatable1.tex}
@@ -217,3 +219,17 @@ Dentre todas as hipóteses levantadas, apenas a primeira pôde ser testada com m
 Diante disso, o trabalho aqui realizado foi capaz de prever as notas com um erro relativamente baixo, de aproximadamente 0.7245, usando \textit{percentage split}. Foi difícil saber com certeza se outros atributos tinham uma influência direta no resultado final, visto que a variação no resultado era muito pouca. Removendo individualmente os atributos de país, diretor e orçamento, o RMSE final variou muito pouco, fazendo com que qualquer conclusão seja imprecisa.
 
 Não foi possível definir se os dados estavam ou não enviesados sem uma observação maior deles, já que o erro, no caso da análise sem os filmes feitos nos Estados Unidos, foi menor. Além de que, sem as produções feitas nos EUA, a quantidade de registros cai de 4998 para 1224, perdendo muitos dados que são de grande importância para a análise de regressão.
+
+A tabela \ref{results} mostra os resultados obtidos:
+
+\begin{longtable}{|l|l|l|}
+\caption{Resultados Obtidos}
+\label{results}
+\\\hline
+\textbf{Análise} & \textbf{\% split} & \textbf{Cross Validation} \\ \hline
+Todos os dados      & 0.7245    & 0.774               \\ \hline
+Sem filmes dos EUA      & 0.7341    & 0.7674               \\ \hline
+Sem Orçamento         & 0.7235     & 0.7496              \\ \hline
+Sem País         & 0.7313     & 0.7462              \\ \hline
+Sem Diretor         & 0.7264     & 0.7451              \\ \hline
+\end{longtable}
