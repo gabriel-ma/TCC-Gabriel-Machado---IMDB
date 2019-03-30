@@ -1,0 +1,32 @@
+\subsection{Pentaho Data Integration}
+Nas seções anteriores discutiu-se um pouco sobre as principais características de um Data Warehouse. Nessa seção, será discutida o uso do PDI no processo de ETL, como ela pode ser aplicada e suas principais características.
+O PDI (\textit{\pdi}), também conhecido como Kettle, oferece diversas ferramentas para a extração de dados de fontes diversas, transformações, limpezas e de carregamento dos dados
+\subsubsection{Arquitetura}
+O \pdi é composto basicamente de quatro componentes:
+\begin{itemize}
+    \item Spoon: é uma aplicação \textit{desktop} de interface gráfica para a criação de \textit{jobs} e \textit{transformations}. Permite a criação de processos de ETL sem a necessidade de programação;
+    \item Pan: uma interface de linha de comando que pode ser usada para a execução de \textit{transformations} e \textit{jobs} criados no \textit{spoon};
+    \item Kitchen: interface de linha de comando que pode ser usada para a execução de \textit{jobs};
+    \item Carte: uma aplicação \textit{web} que é capaz usar um servidor de ETL remoto, fornecendo capacidades de execução remota similares ao servidor de \textit{Data Integration}.
+\end{itemize}
+
+\subsubsection{Princípios de Design}
+\citeAuthorPageYear{kettle} afirmam que o Pentaho foi desenvolvido com alguns princípios de design fundamentais. Algumas experiências negativas levaram a essas decisões. São eles:
+
+Ele é de fácil desenvolvimento, não é preciso se preocupar com instalação do \textit{software}. Uma das facilidades do \pdi é que não é necessário programar, pois toda linha de código adiciona complexidade e custo de manutenção, como por exemplo  várias ferramentas baseadas em Java precisavam que o usuário especificasse explicitamente qual era o nome da Classe Java do Driver e a URL do JDBC, caso tenha uma conexão com o banco de dados. 
+
+O \pdi mantém as funcionalidades disponíveis na interface de usuário, \citeAuthorPageYear{kettle} afirmam que é possível realizar o processo de ETL utilizando arquivos XML, repositório ou uma API, e todas essas opções estão disponíveis em uma interface gráfica. O \pdi não tem limitações de nomenclatura, ou seja não é necessário se preocupar com restrições como tamanho e escolha de caracteres.
+
+\citeAuthorPageYear{kettle} falam que deixar que qualquer pessoa veja o que está acontecendo nas várias partes de um processo de ETL é crucial, pois oportuniza acelerar o desenvolvimento e reduzir o custo. Ele tem um fluxo de dados flexível, o \pdi foi criado para ser o mais flexível possível, respeitando os fluxos que são criados, é possível distribuir ou copiar dados por diversos \textit{steps} como escrever em arquivos de texto ou incluir em bases de dados relacionais. E por fim, apenas mapear dados impactados, todos os campos que não são mapeados passam automaticamente para o próximo passo do processo, reduzindo assim o custo de manutenção.
+
+O \pdi contém uma série de nomenclaturas que são utilizadas para se referir a algo que faz parte de sua arquitetura:
+
+Começando com \textit{transformations}, \citeAuthorPageYear{kettle} dizem que as transformações manipulam os dados de um processo de ETL. Ele consiste de um ou mais \textit{steps} que realiza leitura, limpeza e ou carregamento dos dados em outra base de dados. Esses \textit{steps} estão conectados através de \textit{hops}.
+
+Os \textit{steps}, de acordo com \citeAuthorPageYear{kettle}, são o bloco de construção principal em uma \textit{transformation}. Um \textit{step} contém um nome único, ele pode ler e escrever dados, eles podem escrever dados em um ou mais \textit{hops}. 
+
+Além disso tudo, cada \textit{step}, segundo \citeAuthorPageYear{kettle} possui uma funcionalidade distinta, seja ela de ler dados, escrever dados, realizar transformações e etc. Os \textit{transformation hops}, para \citeAuthorPageYear{kettle}, representam o caminho dos dados entre os \textit{steps}. 
+
+
+
+

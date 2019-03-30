@@ -20,11 +20,31 @@
 \RequirePackage{listings}
 \RequirePackage{color}
 \RequirePackage{url}
+\RequirePackage[perpage]{footmisc}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
+
+\titleclass{\subsubsubsection}{straight}[\subsection]
+
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+\def\toclevel@subsubsubsection{4}
+
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
 
 % Define paginas em branco
 \newcommand\blankpage{%
@@ -74,10 +94,6 @@
 %                       {8\p@ \@plus 4\p@ \@minus 4\p@}%
 %                       {\normalfont\normalsize\bfseries\boldmath
                         %\rightskip=\z@ \@plus 8em\pretolerance=10000 }}
-\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
-                       {-12\p@ \@plus -4\p@ \@minus -4\p@}%
-                       {-0.5em \@plus -0.22em \@minus -0.1em}%
-                       {\normalfont\normalsize\itshape}}
 
 \newcommand{\pdi}{\textit{Pentaho Data Integration }}
 
